@@ -1,3 +1,9 @@
-from model import train_classifier
-from processing import clean_text, nltk_preprocess
-from utils import print_results
+import os
+import config
+import argparse
+from source.utils import load_file
+from source.processing import process_text
+from sklearn.linear_model import LogisticRegression
+
+def main(args):
+    

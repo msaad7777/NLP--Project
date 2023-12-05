@@ -1,11 +1,14 @@
 import re
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
+from nltk.tokenize import regexpTokenizer, word_tokenize
 import nltk
 
 #  necessary NLTK data
 nltk.download('punkt')
 nltk.download('stopwords')
+sw=stopwords.words('english')
+tokenizer=regexpTokenizer(r'\w+')
 
 # Function to clean text data
 def clean_text(text):

@@ -13,7 +13,7 @@ nltk.download('punkt')
 nltk.download('stopwords')
 
 # Load and explore data
-data = pd.read_csv('../Youtube03-LMFAO.csv')
+data = pd.read_csv('./Youtube03-LMFAO.csv')
 print(data.head())
 print(data.info())
 # Load stopwords into a set for faster access
