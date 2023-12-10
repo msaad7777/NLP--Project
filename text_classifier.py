@@ -18,13 +18,12 @@ print(data.head())
 print(data.info())
 # Load stopwords into a set for faster access
 stop_words = set(stopwords.words('english'))
-
+#data.dropna(inplace=True)
 # Function to clean text data
 def clean_text(text):
     text = re.sub(r'<.*?>', '', text)  # Remove HTML tags
     text = text.lower()  # Convert to lowercase
     text = re.sub(r'\W', ' ', text)  # Remove punctuation
-    text = re.sub(r'http\S+', '', text)  # Remove URLs
     text = re.sub(r'\d+', 'number', text)  # Replace numbers
     return text
 
@@ -112,12 +111,12 @@ print("Accuracy:", accuracy_score(y_test, y_pred))
 
 # Test the model with new comments
 new_comments = [
-    'I love this song, it reminds me of summer!',  # non-spam
+    'Check this website, www.canadaforme.ca',  # non-spam
     'This video is very well made, kudos to the director.',  # non-spam
     'Check out my profile for free music!',  # spam
     'Amazing content as always, just subscribed!',  # non-spam
     'Great tutorial, learned a lot from this.',  # non-spam
-    'Free games and gift cards, click on my profile!',  # spam
+    'Free games and gift cards, check my profile!',  # spam
 ]
 
 # Preprocess new comments
